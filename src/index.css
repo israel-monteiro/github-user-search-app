@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-input: var(--input);
+
+    --color-text: var(--text);
+    --color-text-muted: var(--text-muted);
+    --color-text-disabled: var(--text-disabled);
+
+    --color-border: var(--border);
+
+    --color-primary: var(--primary);
+    --color-primary-hover: var(--primary-hover);
+    --color-on-primary: var(--on-primary);
+    --color-error: var(--error);
+
+    --font-mono: "Space Mono", monospace;
+}
+
+/* Cores compartilhadas entre os temas */
+:root, /* Light Theme */
+:root[data-theme="light"] {
+    color-scheme: light;
+
+    --background: #f6f8ff;
+    --surface: #ffffff;
+    --input: #ffffff;
+
+    --text: #2b3442;
+    --text-muted: #4b6a9b;
+    --text-disabled: #90a4d4;
+    --border: #90a4d4;
+
+    --primary: #0079ff;
+    --primary-hover: #60abff;
+    --on-primary: #ffffff;
+    --error: #f74646;
+}
+
+/* Dark Theme */
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --background: #141d2f;
+    --surface: #1e2a47;
+    --input: #1e2a47;
+
+    --text: #ffffff;
+    --text-muted: #90a4d4;
+    --text-disabled: #697c9a;
+    --border: #2b3442;
+
+    --primary: #0079ff;
+    --primary-hover: #60abff;
+    --on-primary: #ffffff;
+    --error: #f74646;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-synthesis: none;
+    background-color: var(--background);
+    color: var(--text);
+}
