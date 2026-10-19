@@ -6,13 +6,13 @@ interface SearchInputProps {
     setUsername: Dispatch<SetStateAction<string>>;
     isUserNotFound: boolean;
     loading: boolean;
-    onSearch: () => void;
+    onSearch: (searchTerm: string) => void;
 }
 
 export const SearchInput = ({ username, setUsername, isUserNotFound, loading, onSearch }: SearchInputProps) => {
     const handleSubmit = (event: React.SubmitEvent) => {
         event.preventDefault();
-        onSearch();
+        onSearch(username);
     };
 
     return (
