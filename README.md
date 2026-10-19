@@ -94,4 +94,4 @@ I want to continue improving my skills in:
 
 - GitHub: [@israel-monteiro](https://github.com/israel-monteiro)
 - LinkedIn: [Israel Monteiro](https://www.linkedin.com/in/israel-monteiro-213416442/)
-- Frontend Mentor: [Add your Frontend Mentor profile](https://www.frontendmentor.io/)
+- Frontend Mentor: [Add your Frontend Mentor profile](https://www.frontendmentor.io/profile/israel-monteiro)
