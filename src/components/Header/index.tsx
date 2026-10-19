@@ -18,7 +18,7 @@ export const Header = () => {
             <button
                 className="flex gap-4 items-center cursor-pointer text-text-muted hover:text-text"
                 type="button"
-                aria-label={`Ativar tema ${theme === "dark" ? "claro" : "escuro"}`}
+                aria-label={`Ativar tema ${theme === "dark" ? "light" : "dark"}`}
                 onClick={toggleTheme}
             >
                 <span className="text-[13px] font-bold  leading-[140%] tracking-[2.5px]">
