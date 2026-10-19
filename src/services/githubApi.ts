@@ -1,12 +1,20 @@
 import type { GithubUser } from "../types/github";
 
-export async function searchUser(username: string): Promise<GithubUser> {
-    const response = await fetch(
-        `https://api.github.com/users/${username}`
-    );
+export class GithubApiError extends Error {
+    readonly status: number;
+
+    constructor(status: number) {
+        super(`GitHub API returned status ${status}.`);
+        this.name = "GithubApiError";
+        this.status = status;
+    }
+}
+
+export async function searchUser(username: string, signal?: AbortSignal): Promise<GithubUser> {
+    const response = await fetch(`https://api.github.com/users/${encodeURIComponent(username)}`, { signal });
 
     if (!response.ok) {
-        throw new Error("Falha ao consultar o GitHub.");
+        throw new GithubApiError(response.status);
     }
 
     return response.json();

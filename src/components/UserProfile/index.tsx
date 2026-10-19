@@ -17,14 +17,14 @@ export const UserProfile = ({ user }: UserProfile) => {
             className="bg-surface flex items-start gap-8 p-12 rounded-2xl
          shadow-[0_16px_30px_-10px_rgba(70,96,187,0.20)] dark:shadow-none"
         >
-            <img src={user.avatar_url} alt={`${user.name} avatar`}  className="w-29.25 h-29.25  rounded-[50%]"/>
+            <img src={user.avatar_url} alt={`${user.name || user.login} avatar`} className="w-29.25 h-29.25 rounded-[50%]" />
 
             {/* profile-content */}
             <div className="flex flex-col w-full gap-6 text-text-secondary">
                 {/* profile-header */}
                 <header className="flex justify-between">
                     <div className="flex flex-col gap-0.5">
-                        <h2 className="text-[26px] font-bold leading-[120%] text-text">{user.name}</h2>
+                        <h2 className="text-[26px] font-bold leading-[120%] text-text">{user.name || user.login}</h2>
                         <span
                             className="text-[16px] leading-[150%]
                         text-primary-hover font-normal"
@@ -70,12 +70,12 @@ export const UserProfile = ({ user }: UserProfile) => {
                     <div className="flex gap-4">
                         <IconWebsite className=" text-text" />
                         <a
-                            href={user.blog}
+                            href={user.blog || undefined}
                             target="_blank"
                             rel="noreferrer"
                             className="text-[15px] font-normal leading-[150%] cursor-pointer hover:underline truncate"
                         >
-                            {user.blog ?? "Not Available"}
+                            {user.blog || "Not Available"}
                         </a>
                     </div>
                     <div className="flex gap-4">
