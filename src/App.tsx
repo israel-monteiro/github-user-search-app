@@ -42,8 +42,8 @@ function App() {
 
     return (
         <>
-            <main className="h-screen flex justify-center items-center">
-                <section className="flex flex-col gap-10 max-w-182.5 w-full">
+            <main className="flex min-h-screen items-start justify-center lg:items-center  px-4 py-8 sm:px-10 sm:py-12">
+                <section className="flex flex-col gap-8 sm:gap-10 max-w-182.5 w-full">
                     <Header />
                     <SearchInput
                         username={username}
@@ -56,16 +56,16 @@ function App() {
                         <div role="status" aria-live="polite" className="text-center text-text">Searching for user...</div>
                     ) : searchError === "not-found" ? (
                         <>
-                            <div className="flex flex-col gap-4 p-12 text-center bg-surface  rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.20)] dark:shadow-none">
-                                <h2 className="text-[22px] font-bold text-text">No results found!</h2>
-                                <p className="text-[15px] text-text-disabled">
+                            <div className="flex flex-col gap-4 p-6 sm:p-12 text-center bg-surface rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.20)] dark:shadow-none">
+                                <h2 className="text-xl sm:text-[22px] font-bold text-text">No results found!</h2>
+                                <p className="text-[15px] text-text-disabled wrap-break-word">
                                     We couldn’t find any GitHub users matching your search. Please double-check the
                                     username and try again.
                                 </p>
                             </div>
                         </>
                     ) : searchError === "request-failed" ? (
-                        <div role="alert" className="p-8 text-center bg-surface rounded-2xl text-error">
+                        <div role="alert" className="p-6 sm:p-8 text-center bg-surface rounded-2xl text-error wrap-break-word">
                             Search failed. Check your connection and try again.
                         </div>
                     ) : (

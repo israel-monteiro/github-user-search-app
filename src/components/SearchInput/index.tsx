@@ -17,17 +17,17 @@ export const SearchInput = ({ username, setUsername, isUserNotFound, loading, on
 
     return (
         <form
-            className="flex w-full justify-between items-center py-2 pl-3 pr-6 bg-surface rounded-2xl gap-6 transition-all focus-within:ring-2 focus-within:ring-primary
+            className="flex h-17.25 w-full min-w-0 justify-between items-center py-2 pl-3 pr-3 sm:pr-6 bg-surface rounded-2xl gap-0 sm:gap-6 transition-all focus-within:ring-2 focus-within:ring-primary
             shadow-[0_16px_30px_-10px_rgba(70,96,187,0.20)] dark:shadow-none"
             onSubmit={handleSubmit}
         >
-            <div className="flex items-center gap-5 flex-1">
-                <img src={SearchIcon} alt="" className="max-w-6 max-h-6" />
+            <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-5">
+                <img src={SearchIcon} alt="" className="h-5 w-5 shrink-0" />
                 <label htmlFor="username-search" className="sr-only">GitHub username</label>
                 <input
                     id="username-search"
                     name="username"
-                    className="w-full outline-none placeholder:text-text-muted 
+                    className="w-full min-w-0 outline-none placeholder:text-text-muted text-[13px] sm:text-base
                 dark:placeholder:text-text-muted/70"
                     type="text"
                     required
@@ -38,10 +38,10 @@ export const SearchInput = ({ username, setUsername, isUserNotFound, loading, on
                     onChange={(event) => setUsername(event.target.value)}
                 />
             </div>
-            <span id="search-error" role="status" aria-live="polite" className={`text-[16px] font-bold ${isUserNotFound ? "block" : "hidden"} text-error`}>
+            <span id="search-error" role="status" aria-live="polite" className={`hidden sm:block text-[16px] font-bold ${isUserNotFound ? "visible" : "invisible"} text-error`}>
                 No results
             </span>
-            <button disabled={loading} className="py-3 px-6 rounded-2xl bg-primary text-on-primary text-[16px] font-bold leading-[150%] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary hover:bg-primary-hover disabled:cursor-wait disabled:opacity-70">
+            <button disabled={loading} className="h-12 shrink-0 py-3 px-5 sm:px-6 rounded-[10px] bg-primary text-on-primary text-base font-bold leading-[150%] whitespace-nowrap cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary hover:bg-primary-hover disabled:cursor-wait disabled:opacity-70">
                 {loading ? "Searching…" : "Search"}
             </button>
         </form>
