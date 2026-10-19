@@ -13,12 +13,12 @@ export const Header = () => {
 
     return (
         <header className="flex w-full justify-between">
-            <h1 className="text-[28px] font-bold text-text">devfinder</h1>
+            <h1 className="text-[26px] font-bold text-text leading-[100%]">devfinder</h1>
 
             <button
-                className="flex gap-4 items-center cursor-pointer text-text-muted hover:text-text"
+                className="flex gap-4 items-center cursor-pointer text-text-muted hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
                 type="button"
-                aria-label={`Ativar tema ${theme === "dark" ? "light" : "dark"}`}
+                aria-label={`Activate theme ${theme === "dark" ? "light" : "dark"}`}
                 onClick={toggleTheme}
             >
                 <span className="text-[13px] font-bold  leading-[140%] tracking-[2.5px]">

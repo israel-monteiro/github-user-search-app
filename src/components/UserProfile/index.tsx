@@ -20,7 +20,7 @@ export const UserProfile = () => {
                         <h2 className="text-[26px] font-bold leading-[120%] text-text">The Octocat</h2>
                         <span
                             className="text-[16px] leading-[150%]
-                        text-primary font-normal"
+                        text-primary-hover font-normal"
                         >
                             @octocat
                         </span>
