@@ -12,7 +12,7 @@ export const Header = () => {
     const ThemeIcon = theme === "dark" ? IconSun : IconMoon;
 
     return (
-        <header className="flex max-w-182.5 w-full justify-between">
+        <header className="flex w-full justify-between">
             <h1 className="text-[28px] font-bold text-text">devfinder</h1>
 
             <button
