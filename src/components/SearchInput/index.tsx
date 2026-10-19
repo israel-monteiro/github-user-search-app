@@ -4,13 +4,13 @@ interface SearchInputProps {
     username: string;
     setUsername: Dispatch<SetStateAction<string>>;
     isUserNotFound: boolean;
+    onSearch: () => void;
 }
 
-export const SearchInput = ({ username, setUsername, isUserNotFound }: SearchInputProps) => {
+export const SearchInput = ({ username, setUsername, isUserNotFound, onSearch }: SearchInputProps) => {
     const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(isUserNotFound);
-        
+        onSearch();
     };
 
     return (
@@ -30,7 +30,9 @@ export const SearchInput = ({ username, setUsername, isUserNotFound }: SearchInp
                     onChange={(event) => setUsername(event.target.value)}
                 />
             </div>
-            <span className={`text-[16px] font-bold ${isUserNotFound ? "block" : "hidden"} text-error`}>No results</span>
+            <span className={`text-[16px] font-bold ${isUserNotFound ? "block" : "hidden"} text-error`}>
+                No results
+            </span>
             <button className="py-3 px-6 rounded-2xl bg-primary text-on-primary text-[16px] font-bold leading-[150%] cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                 Search
             </button>

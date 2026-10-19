@@ -36,9 +36,9 @@
     --text: #2b3442;
     --text-muted: #4b6a9b;
     --text-secondary: #4b6a9b;
-    --text-disabled: #90a4d4;
+    --text-disabled: #697c9a;
     --border: #90a4d4;
-    --stats-background: #F6F8FF;
+    --stats-background: #f6f8ff;
 
     --primary: #0079ff;
     --primary-hover: #60abff;
@@ -56,10 +56,10 @@
 
     --text: #ffffff;
     --text-muted: #90a4d4;
-    --text-secondary: #FFF;
-    --text-disabled: #697c9a;
+    --text-secondary: #fff;
+    --text-disabled: #90a4d4;
     --border: #2b3442;
-    --stats-background: #141D2F;
+    --stats-background: #141d2f;
 
     --primary: #0079ff;
     --primary-hover: #60abff;
